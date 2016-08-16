@@ -18,7 +18,7 @@ cd steem
 git submodule update --init --recursive
 
 cmake -DCMAKE_BUILD_TYPE=Release -DENABLE_CONTENT_PATCHING=OFF -DLOW_MEMORY_NODE=ON .
-make
+make -j $(grep -c ^processor /proc/cpuinfo)
 sudo make install
 
 sudo /home/frog/bin/frog/config-steemd.bash synconly
