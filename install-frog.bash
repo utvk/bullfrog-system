@@ -18,9 +18,10 @@ sudo apt-get update
 sudo apt-get upgrade -y
  
 echo -e "${GRN}|=== Installing required system packages ...                                  |${NC}"
-sudo apt-get -y install gcc g++ libboost-all-dev cmake autoconf automake qt5-default\
- qttools5-dev-tools doxygen libncurses5-dev libncurses5 graphviz libreadline6\
- libreadline6-dev libgmp-dev zip unzip nodejs python3 python3-pip vim sysstat libssl-dev
+sudo apt-get -y install gcc g++ libboost-all-dev cmake autoconf automake\
+ qt5-default qttools5-dev-tools doxygen libncurses5-dev libncurses5 graphviz libreadline6\
+ libreadline6-dev libgmp-dev zip unzip nodejs python3 python3-pip vim sysstat libssl-dev\
+ make libtool
 
 echo -e "${GRN}|=== Creating user 'frog' ...                                                 |${NC}"
 sudo adduser --disabled-password --disabled-login --gecos "" frog
@@ -31,7 +32,7 @@ sudo chown -R frog:frog /home/frog
 
 echo -e "${GRN}|=== Cloning 'bullfrog-system' project ...                                    |${NC}"
 cd /home/frog/project
-sudo -u frog git clone https://github.com/roylaurie/bullfrog-system.git
+sudo -u frog git clone https://github.com/utvk/bullfrog-system.git
 sudo -u frog mkdir /home/frog/bin
 cd /home/frog/bin
 sudo -u frog ln -s ../project/bullfrog-system/bin frog
