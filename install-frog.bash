@@ -44,14 +44,14 @@ sudo mkdir -p /var/local/steemd/backups /var/local/steemd/witness_node_data_dir
 sudo chown -R steemd:steemd /var/local/steemd
 sudo chmod -R o-rwx /var/local/steemd
 
-echo -e "${GRN}|=== Downloading snapshot of steemd blockchain database ...                   |${NC}"
-sudo -u steemd wget http://www.steemitup.eu/witness_node_data_dir.tar.gz -P /var/local/steemd/backups 2>&1 | tee -a /tmp/wgetwitness.log
-
 echo -e "${GRN}|=== Creating and configuring user 'steemwalletd' ...                         |${NC}"
 sudo adduser --disabled-login --disabled-password --home=/var/local/steemwalletd --gecos "" steemwalletd
 sudo mkdir -p /var/local/steemwalletd/backups 
 sudo chown -R steemwalletd:steemwalletd /var/local/steemwalletd
 sudo chmod -R o-rwx /var/local/steemwalletd
+
+echo -e "${GRN}|=== Downloading snapshot of steemd blockchain database ...                   |${NC}"
+sudo -u steemd wget http://www.steemitup.eu/witness_node_data_dir.tar.gz -P /var/local/steemd/backups
 
 echo -e "${GRN}|=== Configuring system services 'steemd' and 'steemwalletd' ...              |${NC}"
 sudo cp /home/frog/project/bullfrog-system/systemd/* /etc/systemd/system
