@@ -16,7 +16,7 @@ git clone https://github.com/steemit/steem.git
 cd steem
 
 git submodule update --init --recursive
-./steem/programs/build_helpers/configure_build.py
+./programs/build_helpers/configure_build.py
 #cmake -DCMAKE_BUILD_TYPE=Release -DENABLE_CONTENT_PATCHING=OFF -DLOW_MEMORY_NODE=ON .
 make -j$(grep -c ^processor /proc/cpuinfo)
 sudo make install
