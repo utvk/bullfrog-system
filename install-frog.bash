@@ -21,7 +21,7 @@ echo -e "${GRN}|=== Installing required system packages ...                     
 sudo apt-get -y install gcc g++ libboost-all-dev cmake autoconf automake\
  qt5-default qttools5-dev-tools doxygen libncurses5-dev libncurses5 graphviz libreadline6\
  libreadline6-dev libgmp-dev zip unzip nodejs python3 python3-pip vim sysstat libssl-dev\
- make libtool git
+ make libtool git python3-setuptools python3-dev
 
 echo -e "${GRN}|=== Creating user 'frog' ...                                                 |${NC}"
 sudo adduser --disabled-password --disabled-login --gecos "" frog
